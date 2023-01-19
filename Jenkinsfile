@@ -24,7 +24,7 @@ pipeline {
         // Step 4
         stage('Push docker image') {
                 steps {
-                    withCredentials([string(credentialsId: 'DOCKER_PASSWORD', variable: 'VAR_FOR_DOCKERPASS')]) {
+                    withCredentials([string(credentialsId: 'Docker_hub_password', variable: 'VAR_FOR_DOCKERPASS')]) {
                     sh "sudo docker login -u sachinkumar69 -p $VAR_FOR_DOCKERPASS"
                     }
                     sh "sudo docker push sachinkumar69/javaapp:v1"
